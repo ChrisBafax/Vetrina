@@ -42,6 +42,62 @@
                     </a>
                 </li>
 
+                <!-- Fourth option -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- First option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/categoria/create">
+                                Crea una Categoria
+                            </a>
+                        </li>
+
+                        <!-- Second option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/categoria/view">
+                                Vedi le Categorie
+                            </a>
+                        </li>
+
+                        <!-- Third option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/skill/create">
+                                Crea una Skill
+                            </a>
+                        </li>
+
+                        <!-- Fourth option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/skill/view">
+                                Vedi le Skill
+                            </a>
+                        </li>
+
+                        <!-- Fifth option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/project/create">
+                                Crea Progetto
+                            </a>
+                        </li>
+
+                        <!-- Sixth option -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page"
+                               href="${pageContext.request.contextPath}/project/view">
+                                Vedi i Progetti
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </div>
     </div>
