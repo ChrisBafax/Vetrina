@@ -21,8 +21,8 @@
     <article>
         <h5 class="display-5">Christian Bafaro</h5>
 
-        <img src="../../resources/static/images/IronMan.jpg" class="rounded mx-auto d-block"
-             alt="Immagine personale" sizes="70%">
+        <img src="${pageContext.request.contextPath}IronMan.jpg" class="rounded mx-auto d-block"
+             alt="Immagine personale" width="70%"><br>
 
         <p>Mi chiamo Christian, ho 24 anni, e la mia vita non è come quella di qualsiasi adolescente di adesso.<br>
             Ho deciso di studiare e lavorare, nonostante non sia una passeggiata, continuo a testa alta,
@@ -43,20 +43,19 @@
         <h6 class="display-6">Vediamo ora le categorie delle Skill in mio possesso:</h6>
         <table class="table table-striped table-responsive">
             <thead>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Descrizione</th>
-                </tr>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+            </tr>
             </thead>
             <tbody>
-                <c:forEach items="${Categorie}" var="Categorie">
-                    <tr>
-                        <td><c:out value="${Categorie.getNome()}"/></td>
-                        <td><c:out value="${Categorie.getDescrizione()}"/></td>
-                    </tr>
-                </c:forEach>
+            <c:forEach items="${Categorie}" var="Categorie">
+                <tr>
+                    <td><c:out value="${Categorie.getNome()}"/></td>
+                    <td><c:out value="${Categorie.getDescrizione()}"/></td>
+                </tr>
+            </c:forEach>
             </tbody>
-
         </table>
     </article>
 </div>
