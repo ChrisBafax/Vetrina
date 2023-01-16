@@ -34,7 +34,7 @@
                 <tr>
                     <td><c:out value="${Projects.getNome()}"/></td>
                     <td><c:out value="${Projects.getDescrizione()}"/></td>
-                    <td><a href="<c:out value="${Projects.getLink()}"/>">Repository</a></td>
+                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">Repository</a></td>
                 </tr>
             </c:forEach>
             </tbody>

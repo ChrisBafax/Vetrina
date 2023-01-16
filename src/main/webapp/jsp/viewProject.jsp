@@ -37,7 +37,7 @@
                 <tr>
                     <td><c:out value="${Projects.getNome()}"/></td>
                     <td><c:out value="${Projects.getDescrizione()}"/></td>
-                    <td><a href="<c:out value="${Projects.getLink()}"/>">Repository</a></td>
+                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">Repository</a></td>
                     <td>
                         <form action="${pageContext.request.contextPath}/project/update/page" method="post" class="d-flex">
                             <input class="form-control me-2" type="hidden" name="id"
