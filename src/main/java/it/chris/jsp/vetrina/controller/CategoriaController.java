@@ -62,7 +62,10 @@ public class CategoriaController {
 
     @PostMapping("/categoria/update/page")
     public ModelAndView updateCategoriaPage(@RequestParam long id) {
-        return new ModelAndView("/jsp/updateCategoria.jsp", "id", id);
+        ModelAndView modelAndView =  new ModelAndView("/jsp/updateCategoria.jsp", "id", id);
+        Categoria categoria = categoriaBO.getCategoriaByID(id);
+        modelAndView.addObject("Categoria", categoria);
+        return modelAndView;
     }
 
     @PostMapping("/categoria/update")

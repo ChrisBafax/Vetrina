@@ -36,7 +36,8 @@
             Sono divertente, così dicono, quindi il mio sorriso è contagioso, faccio sorridere anche gli altri con poco.<br>
             Sono preciso, anche puntuale se vogliamo dirla tutta, odio essere in ritardo.<br>
             Ma direi che elencare i propri pregi sappiamo farlo tutti,
-            non vi dirò quali sono i miei difetti, preferisco li scopriate da soli.</p>
+            non vi dirò quali sono i miei difetti, preferisco li scopriate da soli.
+        </p>
     </article>
 
     <article>

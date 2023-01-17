@@ -50,13 +50,15 @@
                         Menu
                     </a>
                     <ul class="dropdown-menu">
-                        <!-- First option -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page"
-                               href="${pageContext.request.contextPath}/categoria/create">
-                                Crea una Categoria
-                            </a>
-                        </li>
+                        <sec:authorize access="hasRole('ADMIN')">
+                            <!-- First option -->
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page"
+                                   href="${pageContext.request.contextPath}/categoria/create">
+                                    Crea una Categoria
+                                </a>
+                            </li>
+                        </sec:authorize>
 
                         <!-- Second option -->
                         <li class="nav-item">
@@ -66,13 +68,15 @@
                             </a>
                         </li>
 
-                        <!-- Third option -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page"
-                               href="${pageContext.request.contextPath}/skill/create">
-                                Crea una Skill
-                            </a>
-                        </li>
+                        <sec:authorize access="hasRole('ADMIN')">
+                            <!-- Third option -->
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page"
+                                   href="${pageContext.request.contextPath}/skill/create">
+                                    Crea una Skill
+                                </a>
+                            </li>
+                        </sec:authorize>
 
                         <!-- Fourth option -->
                         <li class="nav-item">
@@ -82,13 +86,15 @@
                             </a>
                         </li>
 
-                        <!-- Fifth option -->
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page"
-                               href="${pageContext.request.contextPath}/project/create">
-                                Crea Progetto
-                            </a>
-                        </li>
+                        <sec:authorize access="hasRole('ADMIN')">
+                            <!-- Fifth option -->
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page"
+                                   href="${pageContext.request.contextPath}/project/create">
+                                    Crea Progetto
+                                </a>
+                            </li>
+                        </sec:authorize>
 
                         <!-- Sixth option -->
                         <li class="nav-item">

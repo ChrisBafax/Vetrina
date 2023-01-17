@@ -1,6 +1,7 @@
 package it.chris.jsp.vetrina.business.impl;
 
 import it.chris.jsp.vetrina.business.interfaces.SkillBO;
+import it.chris.jsp.vetrina.model.Categoria;
 import it.chris.jsp.vetrina.model.Skill;
 import it.chris.jsp.vetrina.repository.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class SkillBOImpl implements SkillBO {
     }
 
     @Override
-    public void updateSkill(long id, String nome, String descrizione) throws DataAccessException {
+    public void updateSkill(long id, String nome, String descrizione, Categoria categoria) throws DataAccessException {
         Skill skill = getSkillByID(id);
 
         if (!nome.isEmpty()) {
@@ -47,6 +48,8 @@ public class SkillBOImpl implements SkillBO {
         if (!descrizione.isEmpty()) {
             skill.setDescrizione(descrizione);
         }
+
+        skill.setCategoria(categoria);
         skillRepository.save(skill);
     }
 }

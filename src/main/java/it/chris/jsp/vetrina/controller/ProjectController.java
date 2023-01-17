@@ -68,7 +68,10 @@ public class ProjectController {
 
     @PostMapping("/project/update/page")
     public ModelAndView updateProjectPage(@RequestParam long id) {
-        return new ModelAndView("/jsp/updateProject.jsp", "id", id);
+        ModelAndView modelAndView = new ModelAndView("/jsp/updateProject.jsp", "id", id);
+        Project project = projectBO.getProjectByID(id);
+        modelAndView.addObject("Project", project);
+        return modelAndView;
     }
 
     @PostMapping("/project/update")

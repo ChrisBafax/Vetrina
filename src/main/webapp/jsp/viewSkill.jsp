@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +29,9 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Descrizione</th>
                 <th scope="col"></th>
-                <th scope="col"></th>
+                <sec:authorize access="hasRole('ADMIN')">
+                    <th scope="col"></th>
+                </sec:authorize>
                 <th></th>
             </tr>
             </thead>
@@ -47,15 +50,17 @@
                             </button>
                         </form>
                     </td>
-                    <td>
-                        <form action="${pageContext.request.contextPath}/skill/delete" method="post" class="d-flex">
-                            <input class="form-control me-2" type="hidden" name="id"
-                                   value="<c:out value="${Skills.getId()}"/>">
-                            <button type="submit" class="border-0 " style="color: black; background-color: transparent">
-                                <i class="bi bi-trash3"></i>
-                            </button>
-                        </form>
-                    </td>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <td>
+                            <form action="${pageContext.request.contextPath}/skill/delete" method="post" class="d-flex">
+                                <input class="form-control me-2" type="hidden" name="id"
+                                       value="<c:out value="${Skills.getId()}"/>">
+                                <button type="submit" class="border-0 " style="color: black; background-color: transparent">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </sec:authorize>
                     <td>
                         <c:if test="${id == Skills.getId()}">
                             <p role="alert" style="color: green; font-size: large">

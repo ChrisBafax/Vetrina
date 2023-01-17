@@ -20,7 +20,11 @@ public class SecurityConfig {
                 .password(passwordEncoder.encode("password"))
                 .roles("USER")
                 .build();
-        return new InMemoryUserDetailsManager(userDetails);
+        UserDetails adminDetails = User.withUsername("admin")
+                .password(passwordEncoder.encode("password"))
+                .roles("USER", "ADMIN")
+                .build();
+        return new InMemoryUserDetailsManager(userDetails,adminDetails);
     }
 
     @Bean
@@ -42,26 +46,22 @@ public class SecurityConfig {
                 .invalidateHttpSession(true)
                 .and()
                 .authorizeRequests()
-                .requestMatchers("/")
-                .permitAll()
-                .requestMatchers("/index")
-                .permitAll()
-                .requestMatchers("/skill")
-                .permitAll()
-                .requestMatchers("/project")
-                .permitAll()
-                .requestMatchers("/categoria/**")
-                .authenticated()
-                .requestMatchers("/project/**")
-                .authenticated()
-                .requestMatchers("/skill/**")
-                .authenticated()
-                .requestMatchers("/categoria/update/**")
-                .authenticated()
-                .requestMatchers("/project/update/**")
-                .authenticated()
-                .requestMatchers("/skill/update/**")
-                .authenticated()
+                .requestMatchers("/").permitAll()
+                .requestMatchers("/index").permitAll()
+                .requestMatchers("/skill").permitAll()
+                .requestMatchers("/project").permitAll()
+                .requestMatchers("/categoria/view").authenticated()
+                .requestMatchers("/project/view").authenticated()
+                .requestMatchers("/skill/view").authenticated()
+                .requestMatchers("/categoria/update/**").authenticated()
+                .requestMatchers("/project/update/**").authenticated()
+                .requestMatchers("/skill/update/**").authenticated()
+                .requestMatchers("/categoria/create").hasRole("ADMIN")
+                .requestMatchers("/project/create").hasRole("ADMIN")
+                .requestMatchers("/skill/create").hasRole("ADMIN")
+                .requestMatchers("/categoria/delete").hasRole("ADMIN")
+                .requestMatchers("/project/delete").hasRole("ADMIN")
+                .requestMatchers("/skill/delete").hasRole("ADMIN")
                 .and()
                 .httpBasic();
         return httpSecurity.build();

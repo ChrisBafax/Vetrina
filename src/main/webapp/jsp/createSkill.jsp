@@ -31,8 +31,8 @@
                     <input type="text" name="descrizione" class="form-control" id="descrizione">
                 </div>
                 <div class="mb-3">
-                    <label for="id" class="form-label">ID della categoria:</label>
-                    <select type="text" name="id" class="form-control" id="id">
+                    <label for="idCat" class="form-label">ID della categoria:</label>
+                    <select type="text" name="idCat" class="form-control" id="idCat">
                         <c:forEach items="${Categorie}" var="Categorie">
                             <option><c:out value="${Categorie.getNome()}"/></option>
                         </c:forEach>

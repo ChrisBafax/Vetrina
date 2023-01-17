@@ -48,8 +48,8 @@ public class SkillController {
     }
 
     @PostMapping("/skill/create")
-    public ModelAndView createSkill(@RequestParam String nome, @RequestParam String descrizione, @RequestParam String id) {
-        Categoria categoria = categoriaBO.getCategoriaByNome(id);
+    public ModelAndView createSkill(@RequestParam String nome, @RequestParam String descrizione, @RequestParam String idCat) {
+        Categoria categoria = categoriaBO.getCategoriaByNome(idCat);
 
         Skill skill = new Skill();
         skill.setNome(nome);
@@ -76,13 +76,22 @@ public class SkillController {
 
     @PostMapping("/skill/update/page")
     public ModelAndView updateSkillPage(@RequestParam long id) {
-        return new ModelAndView("/jsp/updateSkill.jsp", "id", id);
+        ModelAndView modelAndView = new ModelAndView("/jsp/updateSkill.jsp", "id", id);
+        List<Categoria> categorie = categoriaBO.getAllCategoria();
+        modelAndView.addObject("Categorie", categorie);
+        Skill skill = skillBO.getSkillByID(id);
+        modelAndView.addObject("Skill", skill);
+        Categoria categoriaSkill = skill.getCategoria();
+        modelAndView.addObject("Categoria", categoriaSkill);
+
+        return modelAndView ;
     }
 
     @PostMapping("/skill/update")
-    public ModelAndView updateSkill(@RequestParam String id, @RequestParam String nome, @RequestParam String descrizione) {
+    public ModelAndView updateSkill(@RequestParam String id, @RequestParam String nome, @RequestParam String descrizione, @RequestParam String idCat) {
         long idL = Long.parseLong(id);
-        skillBO.updateSkill(idL, nome, descrizione);
+        Categoria categoria = categoriaBO.getCategoriaByNome(idCat);
+        skillBO.updateSkill(idL, nome, descrizione, categoria);
         return new ModelAndView("/skill/view", "id", idL);
     }
 }
