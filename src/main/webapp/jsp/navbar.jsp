@@ -1,3 +1,4 @@
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +43,7 @@
                     </a>
                 </li>
 
+                <sec:authorize access="isAuthenticated()">
                 <!-- Fourth option -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -97,7 +99,27 @@
                         </li>
                     </ul>
                 </li>
+                </sec:authorize>
 
+                <sec:authorize access="!isAuthenticated()">
+                <!-- Login -->
+                <li class="nav-item d-flex">
+                    <a class="nav-link" aria-current="page"
+                       href="${pageContext.request.contextPath}/login">
+                        Accedi
+                    </a>
+                </li>
+                </sec:authorize>
+
+                <sec:authorize access="isAuthenticated()">
+                <!-- Logout -->
+                <li class="nav-item d-flex">
+                    <a class="nav-link" aria-current="page"
+                       href="${pageContext.request.contextPath}/logout">
+                        Esci
+                    </a>
+                </li>
+                </sec:authorize>
             </ul>
         </div>
     </div>
