@@ -41,7 +41,9 @@
         </div>
         <div class="mb-3">
             <label for="link" class="form-label">Nuovo Link per la Repository:</label>
-            <input type="text" name="link" class="form-control" id="link" aria-describedby="link">
+            <input type="text" name="link" class="form-control" id="link"
+                   aria-describedby="link"
+                   value="<c:out value="${Project.getLink()}"/>">
         </div>
         <input class="form-control me-2" type="hidden" name="id"
                value="<c:out value="${id}"/>">

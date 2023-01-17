@@ -37,7 +37,7 @@
             <label for="descrizione" class="form-label">Nuova Descrizione:</label>
             <input type="text" name="descrizione" class="form-control" id="descrizione"
                    aria-describedby="descrizione"
-                   value="<c:out value="${Categoria.getNome()}"/>">
+                   value="<c:out value="${Categoria.getDescrizione()}"/>">
         </div>
         <input class="form-control me-2" type="hidden" name="id"
                value="<c:out value="${id}"/>">
