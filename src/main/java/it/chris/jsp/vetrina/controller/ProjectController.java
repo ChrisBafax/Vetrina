@@ -37,12 +37,12 @@ public class ProjectController {
     }
 
     @GetMapping("/project/create")
-    public ModelAndView createCateogoriaP() {
+    public ModelAndView createProjectPage() {
         return new ModelAndView("/jsp/createProject.jsp");
     }
 
     @PostMapping("/project/create")
-    public ModelAndView createCategoria(@RequestParam String nome, @RequestParam String descrizione, @RequestParam String link) {
+    public ModelAndView createProject(@RequestParam String nome, @RequestParam String descrizione, @RequestParam String link) {
         Project project = new Project();
         project.setNome(nome);
         project.setDescrizione(descrizione);

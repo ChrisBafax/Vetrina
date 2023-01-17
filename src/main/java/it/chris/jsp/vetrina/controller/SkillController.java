@@ -42,7 +42,7 @@ public class SkillController {
     }
 
     @GetMapping("/skill/create")
-    public ModelAndView createSkillP() {
+    public ModelAndView createSkillPage() {
         List<Categoria> categorie = categoriaBO.getAllCategoria();
         return new ModelAndView("/jsp/createSkill.jsp", "Categorie", categorie);
     }

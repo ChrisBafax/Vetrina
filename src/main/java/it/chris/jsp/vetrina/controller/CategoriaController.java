@@ -32,7 +32,7 @@ public class CategoriaController {
 
 
     @GetMapping("/categoria/create")
-    public ModelAndView createCateogoriaP() {
+    public ModelAndView createCategoriaPage() {
         return new ModelAndView("/jsp/createCategoria.jsp");
     }
 
