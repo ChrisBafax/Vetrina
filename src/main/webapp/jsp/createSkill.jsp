@@ -32,7 +32,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="id" class="form-label">ID della categoria:</label>
-                    <input type="text" name="id" class="form-control" id="id">
+                    <select type="text" name="id" class="form-control" id="id">
+                        <c:forEach items="${Categorie}" var="Categorie">
+                            <option><c:out value="${Categorie.getNome()}"/></option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
 

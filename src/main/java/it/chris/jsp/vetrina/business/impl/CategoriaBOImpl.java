@@ -27,6 +27,11 @@ public class CategoriaBOImpl implements CategoriaBO {
     }
 
     @Override
+    public Categoria getCategoriaByNome(String nome) throws DataAccessException {
+        return categoriaRepository.findByNome(nome);
+    }
+
+    @Override
     public void addCategoria(Categoria categoria) throws DataAccessException {
         categoriaRepository.save(categoria);
     }

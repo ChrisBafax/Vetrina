@@ -43,12 +43,13 @@ public class SkillController {
 
     @GetMapping("/skill/create")
     public ModelAndView createSkillP() {
-        return new ModelAndView("/jsp/createSkill.jsp");
+        List<Categoria> categorie = categoriaBO.getAllCategoria();
+        return new ModelAndView("/jsp/createSkill.jsp", "Categorie", categorie);
     }
 
     @PostMapping("/skill/create")
-    public ModelAndView createSkill(@RequestParam String nome, @RequestParam String descrizione, @RequestParam long id) {
-        Categoria categoria = categoriaBO.getCategoriaByID(id);
+    public ModelAndView createSkill(@RequestParam String nome, @RequestParam String descrizione, @RequestParam String id) {
+        Categoria categoria = categoriaBO.getCategoriaByNome(id);
 
         Skill skill = new Skill();
         skill.setNome(nome);

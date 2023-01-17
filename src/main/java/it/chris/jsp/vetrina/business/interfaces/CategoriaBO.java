@@ -11,6 +11,8 @@ public interface CategoriaBO {
 
     Categoria getCategoriaByID(long id) throws DataAccessException;
 
+    Categoria getCategoriaByNome(String nome) throws DataAccessException;
+
     void addCategoria(Categoria categoria) throws DataAccessException;
 
     void deteleCategoria(long id) throws DataAccessException;

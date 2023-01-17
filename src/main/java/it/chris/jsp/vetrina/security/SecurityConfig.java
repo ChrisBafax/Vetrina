@@ -11,8 +11,6 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import java.net.PasswordAuthentication;
-
 @Configuration
 public class SecurityConfig {
 
@@ -33,6 +31,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .csrf().disable()
                 .formLogin()
                 .and()
                 .logout()
@@ -56,6 +55,12 @@ public class SecurityConfig {
                 .requestMatchers("/project/**")
                 .authenticated()
                 .requestMatchers("/skill/**")
+                .authenticated()
+                .requestMatchers("/categoria/update/**")
+                .authenticated()
+                .requestMatchers("/project/update/**")
+                .authenticated()
+                .requestMatchers("/skill/update/**")
                 .authenticated()
                 .and()
                 .httpBasic();
