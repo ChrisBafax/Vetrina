@@ -26,7 +26,7 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col">Link</th>
+                <th scope="col">Link <i class="bi bi-github"></i></th>
                 <th scope="col" style="width: 50px">Modifica</th>
                 <th scope="col" style="width: 50px">Cancella</th>
                 <th style="width: 50px"></th>
@@ -37,7 +37,9 @@
                 <tr>
                     <td><c:out value="${Projects.getNome()}"/></td>
                     <td><c:out value="${Projects.getDescrizione()}"/></td>
-                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">Repository</a></td>
+                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">
+                        Repository</a>
+                    </td>
                     <td>
                         <form action="${pageContext.request.contextPath}/project/update/page" method="post" class="d-flex">
                             <input class="form-control me-2" type="hidden" name="id"

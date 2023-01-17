@@ -26,7 +26,7 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col">Link</th>
+                <th scope="col">Link <i class="bi bi-github"></i></th>
             </tr>
             </thead>
             <tbody>
@@ -34,7 +34,9 @@
                 <tr>
                     <td><c:out value="${Projects.getNome()}"/></td>
                     <td><c:out value="${Projects.getDescrizione()}"/></td>
-                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">Repository</a></td>
+                    <td><a href="<c:out value="${Projects.getLink()}"/>" target="_blank">
+                        Repository</a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

@@ -100,27 +100,30 @@
                     </ul>
                 </li>
                 </sec:authorize>
+            </ul>
 
+            <ul class="navbar-nav ms-auto">
                 <sec:authorize access="!isAuthenticated()">
                 <!-- Login -->
-                <li class="nav-item d-flex">
+                <li class="nav-item">
                     <a class="nav-link" aria-current="page"
                        href="${pageContext.request.contextPath}/login">
-                        Accedi
+                        <i class="bi bi-person-circle"></i> Accedi
                     </a>
                 </li>
                 </sec:authorize>
 
                 <sec:authorize access="isAuthenticated()">
                 <!-- Logout -->
-                <li class="nav-item d-flex">
+                <li class="nav-item navbar-right">
                     <a class="nav-link" aria-current="page"
                        href="${pageContext.request.contextPath}/logout">
-                        Esci
+                        <i class="bi bi-box-arrow-left"></i> Esci
                     </a>
                 </li>
                 </sec:authorize>
             </ul>
+
         </div>
     </div>
 </nav>
