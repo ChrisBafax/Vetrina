@@ -17,7 +17,7 @@ public class SkillBOImpl implements SkillBO {
 
     @Override
     public List<Skill> getAllSkill() throws DataAccessException {
-        return skillRepository.findAll();
+        return skillRepository.findAllByOrderByCategoria();
     }
 
     @Override

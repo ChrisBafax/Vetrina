@@ -26,9 +26,9 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Descrizione</th>
-                <th scope="col" style="width: 50px">Modifica</th>
-                <th scope="col" style="width: 50px">Cancella</th>
-                <th style="width: 50px"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
