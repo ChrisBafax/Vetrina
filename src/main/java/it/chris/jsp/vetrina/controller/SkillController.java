@@ -56,7 +56,7 @@ public class SkillController {
         skill.setDescrizione(descrizione);
         skill.setCategoria(categoria);
         skillBO.addSkill(skill);
-        return new ModelAndView("/jsp/createProject.jsp", "operation", true);
+        return new ModelAndView("/jsp/createSkill.jsp", "operation", true);
     }
 
     @PostMapping("/skill/delete")

@@ -21,7 +21,7 @@
     <article>
         <h5 class="display-5">Crea un nuovo Progetto:</h5>
 
-        <form action="${pageContext.request.contextPath}/categoria/create" method="post">
+        <form action="${pageContext.request.contextPath}/project/create" method="post">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
                 <input type="text" name="nome" class="form-control" id="nome" aria-describedby="nome">
