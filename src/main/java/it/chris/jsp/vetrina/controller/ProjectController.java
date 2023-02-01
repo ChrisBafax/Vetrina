@@ -80,5 +80,4 @@ public class ProjectController {
         projectBO.updateProject(idL, nome, descrizione, link);
         return new ModelAndView("/project/view", "id", idL);
     }
-
 }

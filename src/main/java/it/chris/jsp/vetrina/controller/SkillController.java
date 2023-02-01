@@ -83,8 +83,7 @@ public class SkillController {
         modelAndView.addObject("Skill", skill);
         Categoria categoriaSkill = skill.getCategoria();
         modelAndView.addObject("Categoria", categoriaSkill);
-
-        return modelAndView ;
+        return modelAndView;
     }
 
     @PostMapping("/skill/update")

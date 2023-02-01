@@ -40,7 +40,8 @@
                     <td><c:out value="${Categorie.getNome()}"/></td>
                     <td><c:out value="${Categorie.getDescrizione()}"/></td>
                     <td>
-                        <form action="${pageContext.request.contextPath}/categoria/update/page" method="post" class="d-flex">
+                        <form action="${pageContext.request.contextPath}/categoria/update/page" method="post"
+                              class="d-flex">
                             <input class="form-control me-2" type="hidden" name="id"
                                    value="<c:out value="${Categorie.getId()}"/>">
                             <button type="submit" class="border-0 " style="color: black; background-color: transparent">
@@ -50,10 +51,12 @@
                     </td>
                     <sec:authorize access="hasRole('ADMIN')">
                         <td>
-                            <form action="${pageContext.request.contextPath}/categoria/delete" method="post" class="d-flex">
+                            <form action="${pageContext.request.contextPath}/categoria/delete" method="post"
+                                  class="d-flex">
                                 <input class="form-control me-2" type="hidden" name="id"
                                        value="<c:out value="${Categorie.getId()}"/>">
-                                <button type="submit" class="border-0 " style="color: black; background-color: transparent">
+                                <button type="submit" class="border-0 "
+                                        style="color: black; background-color: transparent">
                                     <i class="bi bi-trash3"></i>
                                 </button>
                             </form>
@@ -75,13 +78,13 @@
     <article>
         <c:if test="${delete == true}">
             <div class="alert alert-success" role="alert">
-                Eliminazione con successo.
+                Eliminazione avvenuta con successo.
             </div>
         </c:if>
 
         <c:if test="${delete == false}">
             <div class="alert alert-danger" role="alert">
-                ID non trovato.
+                L'ID che vuoi eliminare non è stato trovato.
             </div>
         </c:if>
     </article>

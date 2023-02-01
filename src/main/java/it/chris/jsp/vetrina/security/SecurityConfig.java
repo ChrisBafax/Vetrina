@@ -24,7 +24,7 @@ public class SecurityConfig {
                 .password(passwordEncoder.encode("password"))
                 .roles("USER", "ADMIN")
                 .build();
-        return new InMemoryUserDetailsManager(userDetails,adminDetails);
+        return new InMemoryUserDetailsManager(userDetails, adminDetails);
     }
 
     @Bean
