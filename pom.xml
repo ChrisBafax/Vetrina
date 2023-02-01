@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.chris.jsp</groupId>
-    <artifactId>Vetrina</artifactId>
+    <artifactId>vetrina</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Vetrina</name>
     <description>Vetrina</description>
@@ -103,5 +103,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
